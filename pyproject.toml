@@ -4,10 +4,17 @@ version = "0.1.0"
 description = "Second project with Hexlet - gendifferencies"
 authors = ["Oleg Kharitonov <o_kharitonov@mail.ru>"]
 readme = "README.md"
+packages = [
+  { include = "gendiff" },
+]
+
 
 [tool.poetry.dependencies]
 python = "^3.10"
 
+
+[tool.poetry.group.dev.dependencies]
+flake8 = "^7.0.0"
 
 [build-system]
 requires = ["poetry-core"]
