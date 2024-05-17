@@ -4,8 +4,9 @@ import json
 
 
 def get_output(file1_dict, file2_dict):
-    sorted_items = sorted(
-        set(list(file1_dict.keys()) + list(file2_dict.keys())))
+    keys1 = list(file1_dict.keys())
+    keys2 = list(file2_dict.keys())
+    sorted_items = sorted(set(keys1 + keys2))
     output = "{\n"
     for item in sorted_items:
         if file1_dict.get(item) and \
