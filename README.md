@@ -7,5 +7,8 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/1705039bdda55944a721/maintainability)](https://codeclimate.com/github/OlegKhnew/python-project-50/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/1705039bdda55944a721/test_coverage)](https://codeclimate.com/github/OlegKhnew/python-project-50/test_coverage)
 
-Gendiff package demo
+Gendiff package demo with json-files
 [![asciicast](https://asciinema.org/a/eSfTKhXVQYcPvU8tAZjwLYT5S.svg)](https://asciinema.org/a/eSfTKhXVQYcPvU8tAZjwLYT5S)
+
+Gendiff package demo with yml-files
+[![asciicast](https://asciinema.org/a/EcSjRz2jbxC7vv9HU8aBFRUXN.svg)](https://asciinema.org/a/EcSjRz2jbxC7vv9HU8aBFRUXN)

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import json
+from gendiff.parser import parse
 
 
 def get_diff_dict(dict_1, dict_2):
@@ -28,14 +28,14 @@ def get_output(diff):
         if v['status'] == 'changed':
             old_value = str(v['old_value'])
             new_value = str(v['new_value'])
-            output += (f'- {k}: {old_value}\n')
-            output += (f'+ {k}: {new_value}\n')
+            output += (f'  - {k}: {old_value}\n')
+            output += (f'  + {k}: {new_value}\n')
         else:
             status = v['status'].replace('unchanged', ' ')\
                                 .replace('added', '+').replace('removed', '-')
             value = str(v['value'])
-            output += (f'{status} {k}: {value}\n')
-    output += '}'
+            output += (f'  {status} {k}: {value}\n')
+    output += '}\n'
 
     output = output.replace('False', 'false').replace('True', 'true')
 
@@ -43,8 +43,8 @@ def get_output(diff):
 
 
 def generate_diff(file_path1, file_path2):
-    dict_1 = json.load(open(file_path1))
-    dict_2 = json.load(open(file_path2))
+    dict_1 = parse(file_path1)
+    dict_2 = parse(file_path2)
     diff_dict = get_diff_dict(dict_1, dict_2)
     result = get_output(diff_dict)
     return result

@@ -1,9 +1,20 @@
 from gendiff.gendiff import generate_diff
-from fixtures.testdatas import result
+import pytest
 
 
-def test_generate_diff(result):
-    testfile1 = 'tests/fixtures/testfile1.json'
-    testfile2 = 'tests/fixtures/testfile2.json'
-    output = generate_diff(testfile1,testfile2)
-    assert output == result
+
+jsonfile1 = "tests/fixtures/file1.json"
+jsonfile2 = "tests/fixtures/file2.json"
+ymlfile1 = "tests/fixtures/file1.yml"
+ymlfile2 = "tests/fixtures/file2.yml"
+testresult = "tests/fixtures/testresult.txt"
+
+
+@pytest.mark.parametrize('file1, file2, result',
+                         [(jsonfile1, jsonfile2, testresult),
+                          (ymlfile1, ymlfile2, testresult)])
+
+
+def test_generate_diff(file1, file2, result):
+    with open (result) as file:
+        assert generate_diff(file1, file2) == file.read()
