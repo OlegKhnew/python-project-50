@@ -2,7 +2,7 @@
 
 from gendiff.parser import parse
 from gendiff.stylish import to_stylish
-from gendiff.get_diff_tree import get_difftree
+from gendiff.gen_diff import gen_diff
 
 
 def get_format(formater):
@@ -13,7 +13,7 @@ def get_format(formater):
 def generate_diff(file_path1, file_path2, formater="stylish"):
     dict_1 = parse(file_path1)
     dict_2 = parse(file_path2)
-    diff_tree = get_difftree(dict_1, dict_2)
+    diff_tree = gen_diff(dict_1, dict_2)
     formater = get_format(formater)
-    result = formater(diff_tree)
+    result = formater(diff_tree) + '\n'
     return result

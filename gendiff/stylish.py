@@ -1,58 +1,41 @@
 import json
 
 
-def newvalue(val):
-    if isinstance(val, dict):
-        return val
+def to_string(value, depth=0):
+    if isinstance(value, dict):
+        indent = ' ' * (depth * 4 + 2)
+        current_indent = indent + (' ' * 6)
+        lines = []
+        for key, val in value.items():
+            lines.append(f'{current_indent}{key}: {to_string(val, depth + 1)}')
+        result = '\n'.join(lines)
+        return f"{{\n{result}\n  {indent}}}"
     else:
-        return json.dumps(val).replace('"', "")
+        return json.dumps(value).replace('"', "")
 
 
-def form_dict(val, depth):
-    if not isinstance(val, dict):
-        return val
-    result = ["{"]
-    for key, value in val.items():
-        result.append(f"\n{'  '*(depth)}  "
-                      f"{key}: {form_dict(value, depth+2)}")
-    result.append(f"\n{'  '*(depth-1)}}}")
-    return ''.join(result)
-
-
-def get_strings(newtree, depth=1, result=None):
-    indent = depth * '  '
-    if result is None:
-        result = []
-    for key, value in newtree.items():
-        status = value['status']
+def to_stylish(data, depth=0):
+    result = '{\n'
+    indent = '  '
+    for i in range(depth):
+        indent += '    '
+    for item in data:
+        status = item['status']
+        key = item['key']
+        value = to_string(item.get('value'), depth)
+        old_value = to_string(item.get('old_value'), depth)
+        new_value = to_string(item.get('new_value'), depth)
         if status == 'node':
-            result.append(f"{indent}  {key}: {{")
-            result.append(get_strings(value['value'], depth + 2, result))
-            result.append(f"{indent}  }}")
+            newdata = item['value']
+            result += f"{indent}  {key}: {to_stylish(newdata, depth + 1)}\n"
         elif status == 'added':
-            result.append(f"{indent}+ {key}: "
-                          f"{form_dict(newvalue(value['value']), depth+2)}")
-        elif status == 'removed':
-            result.append(f"{indent}- {key}: "
-                          f"{form_dict(newvalue(value['value']), depth+2)}")
-        elif status == 'unchanged':
-            result.append(f"{indent}  {key}: "
-                          f"{form_dict(newvalue(value['value']), depth+2)}")
+            result += f"{indent}+ {key}: {value}\n"
         elif status == 'changed':
-            result.append(f"{indent}- {key}: "
-                          f"{form_dict(newvalue(value['old_value']), depth+2)}")
-            result.append(f"{indent}+ {key}: "
-                          f"{form_dict(newvalue(value['new_value']), depth+2)}")
+            result += f"{indent}- {key}: {old_value}\n"
+            result += f"{indent}+ {key}: {new_value}\n"
+        elif status == 'removed':
+            result += f"{indent}- {key}: {value}\n"
+        elif status == 'unchanged':
+            result += f"{indent}  {key}: {value}\n"
+    result += indent[:-2] + "}"
     return result
-
-
-def to_stylish(newtree):
-    result = get_strings(newtree, result=[])
-    result.insert(0, '{')
-    result.append('}\n')
-    output = []
-    for item in result:
-        if not isinstance(item, list):
-            output.append(item)
-    output_string = '\n'.join(output)
-    return output_string
