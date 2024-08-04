@@ -14,7 +14,7 @@ def to_string(value, depth=0):
         return json.dumps(value).replace('"', "")
 
 
-def to_stylish(data, depth=0):
+def to_stylish(data, depth=0):  # noqa: C901
     result = '{\n'
     indent = '  '
     for i in range(depth):
