@@ -5,3 +5,7 @@ dist/
 .venv/
 .pytest_cache/
 demo.cast
+testfile1.json
+testfile2.json
+testfile1.yaml
+testfile2.yaml
