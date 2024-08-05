@@ -11,12 +11,15 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/1705039bdda55944a721/maintainability)](https://codeclimate.com/github/OlegKhnew/python-project-50/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/1705039bdda55944a721/test_coverage)](https://codeclimate.com/github/OlegKhnew/python-project-50/test_coverage)
 
-Gendiff package demo - install and demo  - with json-files
+Gendiff package - install and demo with 'plain' json-files
 [![asciicast](https://asciinema.org/a/eSfTKhXVQYcPvU8tAZjwLYT5S.svg)](https://asciinema.org/a/eSfTKhXVQYcPvU8tAZjwLYT5S)
 
-Gendiff package demo - demo with yml-files
+Gendiff package - demo with 'plain' yml-files
 [![asciicast](https://asciinema.org/a/EcSjRz2jbxC7vv9HU8aBFRUXN.svg)](https://asciinema.org/a/EcSjRz2jbxC7vv9HU8aBFRUXN)
 
-Gendiff package demo - with json-files and yaml-files to output in 'stylish' format
+Gendiff package - json-files and yaml-files with output in 'stylish' format
 [![asciicast](https://asciinema.org/a/t6AsqdfDPydkOJCtdIxIxCx79.svg)](https://asciinema.org/a/t6AsqdfDPydkOJCtdIxIxCx79)
+
+Gendiff package - son=files and yaml-files with output in 'plain' format
+[![asciicast](https://asciinema.org/a/jHD5e0zOBaO5JTRohNeJmjI4d.svg)](https://asciinema.org/a/jHD5e0zOBaO5JTRohNeJmjI4d)
 
