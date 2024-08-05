@@ -3,11 +3,12 @@
 from gendiff.parser import parse
 from gendiff.formaters.stylish import to_stylish
 from gendiff.formaters.plain import to_plain
+from gendiff.formaters.json_format import to_json
 from gendiff.gen_diff import gen_diff
 
 
 def get_format(formater):
-    formats = {'stylish': to_stylish, 'plain': to_plain}
+    formats = {'stylish': to_stylish, 'plain': to_plain, 'json': to_json}
     return formats[formater]
 
 
