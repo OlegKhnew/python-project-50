@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "hexlet-code"
 version = "0.1.0"
-description = "Second project with Hexlet - gendifferencies"
+description = "Second project with Hexlet - gendifferences"
 authors = ["Oleg Kharitonov <o_kharitonov@mail.ru>"]
 readme = "README.md"
 packages = [
