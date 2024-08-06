@@ -29,28 +29,41 @@ To run this project clone the repo from GitHub:
 
 
 ## Main commands:
-# gendiff -h
-(command for help)
-# gendiff file_to_path1 file_to_path2
-(command displays files-difference in STYLISH format ( default format - stylish)
-# gendiff file_to_path1 file_to_path2 -f plain
-(command displays files-difference in PLAIN format)
-# genidff file_to_path1 file_to_path2 -f json
-(command displays files-difference in JSON format)
+
+```bash
+>> gendiff -h
+```
+(help)
+
+```bash
+>> gendiff file_to_path1 file_to_path2
+```
+(displays files-difference in STYLISH format ( default format - stylish)
+
+```bash
+>> gendiff file_to_path1 file_to_path2 -f plain
+```
+(displays files-difference in PLAIN format)
+
+```bash
+>> gendiff file_to_path1 file_to_path2 -f json
+```
+(displays files-difference in JSON format)
 
 
-GENDIFF DEMO  - install and demo with json-files
+
+#GENDIFF DEMO  - install and demo with json-files
 [![asciicast](https://asciinema.org/a/eSfTKhXVQYcPvU8tAZjwLYT5S.svg)](https://asciinema.org/a/eSfTKhXVQYcPvU8tAZjwLYT5S)
 
-GENDIFF DEMO - with yml-files
+#GENDIFF DEMO - with yml-files
 [![asciicast](https://asciinema.org/a/EcSjRz2jbxC7vv9HU8aBFRUXN.svg)](https://asciinema.org/a/EcSjRz2jbxC7vv9HU8aBFRUXN)
 
-GENDIFF DEMO - compare json-files or yaml-files with output in 'stylish' format
+#GENDIFF DEMO - compare json-files or yaml-files with output in 'stylish' format
 [![asciicast](https://asciinema.org/a/t6AsqdfDPydkOJCtdIxIxCx79.svg)](https://asciinema.org/a/t6AsqdfDPydkOJCtdIxIxCx79)
 
-GENDIFF DEMO - compare json-files or yaml-files with output in 'plain' format
+#GENDIFF DEMO - compare json-files or yaml-files with output in 'plain' format
 [![asciicast](https://asciinema.org/a/jHD5e0zOBaO5JTRohNeJmjI4d.svg)](https://asciinema.org/a/jHD5e0zOBaO5JTRohNeJmjI4d)
 
-GENDIFF DEMO - compare json-files or yaml-files with output in 'json' format.
+#GENDIFF DEMO - compare json-files or yaml-files with output in 'json' format.
 [![asciicast](https://asciinema.org/a/RQ5wfvhUSP8ugnwDhaI2Csvql.svg)](https://asciinema.org/a/RQ5wfvhUSP8ugnwDhaI2Csvql)
 
