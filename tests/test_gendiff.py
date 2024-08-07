@@ -2,7 +2,6 @@ from gendiff.engine import generate_diff
 import pytest
 
 
-
 jsonfile1 = "tests/fixtures/file1.json"
 jsonfile2 = "tests/fixtures/file2.json"
 ymlfile1 = "tests/fixtures/file1.yml"
@@ -20,5 +19,5 @@ test_json = "tests/fixtures/jsontest.json"
                           (jsonfile1, jsonfile2, 'json', test_json),
                           (ymlfile1, ymlfile2, 'json', test_json)])
 def test_generate_diff(file1, file2, format, expected):
-    with open (expected) as file:
+    with open(expected) as file:
         assert generate_diff(file1, file2, format) == file.read().strip()
