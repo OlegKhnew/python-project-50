@@ -1,7 +1,8 @@
 import json
 
 
-def format_to_dict(data):
+def format_to_dict(data: list) -> dict:
+    ''' Transform list to dict '''
     result = {}
     for item in data:
         status = item['status']
@@ -19,6 +20,7 @@ def format_to_dict(data):
     return result
 
 
-def to_json(data):
+def to_json(data: list):
+    ''' Transform data to json-format view '''
     result = format_to_dict(data)
     return json.dumps(result, indent=2)

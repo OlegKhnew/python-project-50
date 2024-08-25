@@ -2,6 +2,7 @@ import argparse
 
 
 def cli():
+    '''The function allows to choose input files and output format.'''
     parser = argparse.ArgumentParser(
         description='Compares two configuration files and shows a difference.'
     )

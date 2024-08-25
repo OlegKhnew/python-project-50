@@ -1,5 +1,6 @@
 
-def to_string(value):
+def to_string(value: str) -> str:
+    ''' Transform value to string and node-values to "complex value" '''
     if isinstance(value, dict):
         return '[complex value]'
     elif isinstance(value, bool):
@@ -12,7 +13,8 @@ def to_string(value):
         return f"'{value}'"
 
 
-def to_plain(tree, path=''):  # noqa: C901
+def to_plain(tree: list, path='') -> str:  # noqa: C901
+    ''' Transform data to plain format'''
     result = []
     for item in tree:
         status = item['status']

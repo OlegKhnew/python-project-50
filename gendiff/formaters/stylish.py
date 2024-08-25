@@ -1,7 +1,8 @@
 import json
 
 
-def to_string(value, depth=0):
+def to_string(value, depth=0) -> str:
+    ''' Transfer value to string '''
     if isinstance(value, dict):
         indent = ' ' * (depth * 4 + 2)
         current_indent = indent + (' ' * 6)
@@ -14,7 +15,8 @@ def to_string(value, depth=0):
         return json.dumps(value).replace('"', "")
 
 
-def to_stylish(data, depth=0):  # noqa: C901
+def to_stylish(data: list, depth=0) -> str:  # noqa: C901
+    ''' Transfer data to stylish format '''
     result = '{\n'
     indent = '  '
     for i in range(depth):

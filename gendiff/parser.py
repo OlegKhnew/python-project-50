@@ -1,13 +1,17 @@
+''' Parsing modul for input files'''
+
 import json
 import yaml
 
 
-def get_file_format(pathfile):
+def get_file_format(pathfile: str) -> str:
+    '''Defining the extension of input file'''
     file_format = pathfile.split('.')[-1].strip()
     return file_format
 
 
-def get_data(pathfile):
+def get_data(pathfile: str) -> str:
+    ''' Reading of file contest '''
     result = ''
     with open(pathfile) as file:
         for line in file:
@@ -15,7 +19,8 @@ def get_data(pathfile):
     return result
 
 
-def parse(pathfile):
+def parse(pathfile: str) -> dict:
+    ''' Parsing function for different formats'''
     data = get_data(pathfile)
     file_format = get_file_format(pathfile)
     result = {}

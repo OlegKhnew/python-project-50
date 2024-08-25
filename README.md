@@ -16,7 +16,7 @@
 The program allows you to use .json or .yaml formats as input data and select one from 3 different formats to present output data.
 
 
-## Setup_____________________________________________
+## Setup
 
 To run this project clone the repo from GitHub:
 
@@ -30,26 +30,32 @@ To run this project clone the repo from GitHub:
 
 ## Main commands:
 
+Help:
+
 ```bash
 >> gendiff -h
 ```
-(help)
+
+Displays files-difference in STYLISH format ( default format - stylish):
 
 ```bash
 >> gendiff file_to_path1 file_to_path2
 ```
-(displays files-difference in STYLISH format ( default format - stylish)
+
+Displays files-difference in PLAIN format:
 
 ```bash
 >> gendiff file_to_path1 file_to_path2 -f plain
 ```
-(displays files-difference in PLAIN format)
+
+Displays files-difference in JSON format:
 
 ```bash
 >> gendiff file_to_path1 file_to_path2 -f json
 ```
-(displays files-difference in JSON format)
 
+
+## GENDIFF DEMOS:
 
 
 #GENDIFF DEMO  - install and demo with json-files

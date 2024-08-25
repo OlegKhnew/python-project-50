@@ -1,5 +1,9 @@
 
-def gen_diff(dict_1, dict_2):
+def gen_diff(dict_1: dict, dict_2: dict) -> list:
+    '''
+    Function creates a difference representation
+    in a tree-data structure.
+    '''
     keys = dict_1.keys() | dict_2.keys()
     diff = []
     for key in sorted(keys):
